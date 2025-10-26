@@ -16,11 +16,11 @@ public class WriteOnce
         System.out.println("Please enter a name to save in " + fileName + ": ");
         String name = scan1.nextLine().trim();
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {
+        try(PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {
             out.println(name);
             System.out.println("Saved to " + fileName);
         } catch (IOException ex) {
-            System.err.println("Error writing to " + fileName + ": " + ex.getMessage());
+            System.err.println("Error writing to: " + ex.getMessage());
         }
     }
 }
